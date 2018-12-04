@@ -5,7 +5,7 @@ from conans import ConanFile, CMake, tools
 
 class RpclibConan(ConanFile):
     name = "rpclib"
-    version = "dev"
+    version = "2.2.1"
     license = "MIT"
     url = "https://github.com/rpclib/rpclib-conan"
     description = "RPC for modern C++"
@@ -18,7 +18,7 @@ class RpclibConan(ConanFile):
         archive = "rpclib.zip"
         tools.download(
             "https://github.com/rpclib/rpclib/archive/"
-            "{v}.zip".format(v=self.version),
+            "v{v}.zip".format(v=self.version),
             archive)
         tools.unzip(archive)
         os.unlink(archive)
