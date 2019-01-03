@@ -43,7 +43,7 @@ class RpclibConan(ConanFile):
             if self.settings.arch == 'x86':
                 self.cmake.definitions["CMAKE_C_FLAGS"] = "-m32"
                 self.cmake.definitions["CMAKE_CXX_FLAGS"] = "-m32"
-            else:
+            elif self.settings.arch == 'x86_64':
                 self.cmake.definitions["CMAKE_C_FLAGS"] = "-m64"
                 self.cmake.definitions["CMAKE_CXX_FLAGS"] = "-m64"
         self.cmake.configure(source_dir="rpclib-{0}".format(self.version))
